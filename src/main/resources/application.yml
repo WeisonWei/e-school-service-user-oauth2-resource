@@ -1,6 +1,6 @@
 spring:
   application:
-    name: e-school-user-service-oauth2-resource
+    name: e-school-service-user-oauth2-resource
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver

@@ -14,10 +14,10 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @EnableJpaAuditing
 @EnableOAuth2Client  // 启用 OAuth 2.0 客户端
 @EnableDiscoveryClient
-public class ESchoolUserServiceOauth2ResourceApplication {
+public class ESchoolServiceUserOauth2ResourceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ESchoolUserServiceOauth2ResourceApplication.class, args);
+        SpringApplication.run(ESchoolServiceUserOauth2ResourceApplication.class, args);
     }
 
 }
