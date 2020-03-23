@@ -1,0 +1,67 @@
+spring:
+  application:
+    name: e-school-user-service-oauth2-resource
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: demo
+    password: 123123
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: MyHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+    schema: classpath:schema.sql
+    data: classpath:data.sql
+    initialization-mode: ALWAYS
+
+  jpa:
+    show-sql: true
+    open-in-view: false
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        show_sql: true
+        format_sql: false
+        use_sql_comments: false
+        enable_lazy_load_no_trans: true
+        globally_quoted_identifiers: true
+        globally_quoted_identifiers_skip_column_definitions: true
+        hibernate:
+          auto_quote_keyword: true
+        jdbc:
+          batch_size: 5000
+          batch_versioned_data: true
+        order_inserts: true
+        order_updates: true
+
+
+security:
+  oauth2:
+    client:
+      client-id: client
+      client-secret: secret
+      access-token-uri: http://localhost:8082/oauth/token
+      user-authorization-uri: http://localhost:8082/oauth/authorize
+    resource:
+      token-info-uri: http://localhost:8082/oauth/check_token
+
+server:
+  port: 8083
+  servlet:
+    context-path: /contents
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.springframework.security.oauth2: INFO
