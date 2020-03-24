@@ -1,11 +1,12 @@
 delete from `tb_content`;
+delete from `tb_content_category`;
+
 insert into `tb_content`(`id`, `category_id`, `title`, `sub_title`, `title_desc`, `url`, `pic`, `pic2`, `content`)
 values (28, 89, '标题', '子标题', '标题说明', 'http://www.jd.com', NULL, NULL, NULL),
        (29, 89, 'ad2', 'ad2', 'ad2', 'http://www.baidu.com', NULL, NULL, NULL),
        (30, 89, 'ad3', 'ad3', 'ad3', 'http://www.sina.com.cn', NULL, NULL, NULL),
        (31, 89, 'ad4', 'ad4', 'ad4', 'http://www.funtl.com', NULL, NULL, NULL);
 
-delete from `tb_content_category`;
 insert into `tb_content_category`(`id`, `parent_id`, `name`, `status`, `sort_order`, `is_parent`)
 values (30, 0, 'LeeShop', 1, 1, 1),
        (86, 30, '首页', 1, 1, 1),

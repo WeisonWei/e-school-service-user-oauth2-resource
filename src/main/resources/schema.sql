@@ -15,8 +15,7 @@ CREATE TABLE IF NOT EXISTS `tb_content`
     PRIMARY KEY (`id`),
     KEY `category_id` (`category_id`),
     KEY `updated` (`updated`)
-) ENGINE = InnoDB
-  AUTO_INCREMENT = 42
+) AUTO_INCREMENT = 42
   DEFAULT CHARSET = utf8;
 
 CREATE TABLE IF NOT EXISTS `tb_content_category`
@@ -32,6 +31,5 @@ CREATE TABLE IF NOT EXISTS `tb_content_category`
     PRIMARY KEY (`id`),
     KEY `parent_id` (`parent_id`, `status`) USING BTREE,
     KEY `sort_order` (`sort_order`)
-) ENGINE = InnoDB
-  AUTO_INCREMENT = 98
+) AUTO_INCREMENT = 98
   DEFAULT CHARSET = utf8 COMMENT ='内容分类';
